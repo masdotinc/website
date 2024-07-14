@@ -6,44 +6,35 @@ import { media } from 'utils/media';
 
 type SingleFooterListItem = { title: string; href: string };
 type FooterListItems = SingleFooterListItem[];
-type SingleFooterList = { title: string; items: FooterListItems };
+type SingleFooterList = { title: string; items: FooterListItems; subtitle?: string };
 type FooterItems = SingleFooterList[];
 
 const footerItems: FooterItems = [
   {
-    title: 'Company',
+    title: 'Midwest AI Solution, Inc.',
+    subtitle: 'Chicago, IL',
     items: [
-      { title: 'Privacy Policy', href: '/privacy-policy' },
-      { title: 'Cookies Policy', href: '/cookies-policy' },
     ],
   },
-  {
-    title: 'Product',
-    items: [
-      { title: 'Features', href: '/features' },
-      { title: 'Something', href: '/something' },
-      { title: 'Something else', href: '/something-else' },
-      { title: 'And something else', href: '/and-something-else' },
-    ],
-  },
-  {
-    title: 'Knowledge',
-    items: [
-      { title: 'Blog', href: '/blog' },
-      { title: 'Contact', href: '/contact' },
-      { title: 'FAQ', href: '/faq' },
-      { title: 'Help Center', href: '/help-center' },
-    ],
-  },
-  {
-    title: 'Something',
-    items: [
-      { title: 'Features2', href: '/features2' },
-      { title: 'Something2', href: '/something2' },
-      { title: 'Something else2', href: '/something-else2' },
-      { title: 'And something else2', href: '/and-something-else2' },
-    ],
-  },
+  
+  // {
+  //   title: 'Knowledge',
+  //   items: [
+  //     { title: 'Blog', href: '/blog' },
+  //     { title: 'Contact', href: '/contact' },
+  //     { title: 'FAQ', href: '/faq' },
+  //     { title: 'Help Center', href: '/help-center' },
+  //   ],
+  // },
+  // {
+  //   title: 'Something',
+  //   items: [
+  //     { title: 'Features2', href: '/features2' },
+  //     { title: 'Something2', href: '/something2' },
+  //     { title: 'Something else2', href: '/something-else2' },
+  //     { title: 'And something else2', href: '/and-something-else2' },
+  //   ],
+  // },
 ];
 
 export default function Footer() {
@@ -56,39 +47,28 @@ export default function Footer() {
           ))}
         </ListContainer>
         <BottomBar>
-          <ShareBar>
-            <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
-              <a>
-                <TwitterIcon size={50} round={true} />
-              </a>
-            </NextLink>
+          
+          <Copyright>Copyright &copy; 2024 Midwest AI Solution, Inc.</Copyright>
 
-            <NextLink href="https://www.facebook.com/my-saas-startup" passHref>
-              <a>
-                <FacebookIcon size={50} round={true} />
-              </a>
-            </NextLink>
-
-            <NextLink href="https://www.linkedin.com/my-saas-startup" passHref>
-              <a>
-                <LinkedinIcon size={50} round={true} />
-              </a>
-            </NextLink>
-          </ShareBar>
-          <Copyright>&copy; Copyright 2021 My Saas Startup</Copyright>
+          <Copyright>support@mwaisolution.com</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>
   );
 }
 
-function FooterList({ title, items }: SingleFooterList) {
+function FooterList({ title, items, subtitle }: SingleFooterList & { subtitle?: string }) {
   return (
     <ListWrapper>
-      <ListHeader>{title}</ListHeader>
-      {items.map((singleItem) => (
-        <ListItem key={singleItem.href} {...singleItem} />
-      ))}
+      <HeaderContainer>
+        <ListHeader>{title}</ListHeader>
+        {subtitle && <ListSubtitle>{subtitle}</ListSubtitle>}
+      </HeaderContainer>
+      <ItemsContainer>
+        {items.map((singleItem) => (
+          <ListItem key={singleItem.href} {...singleItem} />
+        ))}
+      </ItemsContainer>
     </ListWrapper>
   );
 }
@@ -106,8 +86,15 @@ function ListItem({ title, href }: SingleFooterListItem) {
 const FooterWrapper = styled.div`
   padding-top: 10rem;
   padding-bottom: 4rem;
-  background: rgb(var(--secondary));
+  background: rgb(var(--primary));
   color: rgb(var(--textSecondary));
+`;
+
+const ListSubtitle = styled.p`
+  font-size: 1.8rem;
+  color: rgba(var(--textSecondary), 0.75);
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
 `;
 
 const ListContainer = styled.div`
@@ -125,24 +112,32 @@ const ListHeader = styled.p`
 
 const ListWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 5rem;
   margin-right: 5rem;
 
+  ${media('<=tablet')} {
+    flex-direction: column;
+    align-items: stretch;
+  }
+`;
+
+const HeaderContainer = styled.div`
+  flex: 1;
+`;
+
+const ItemsContainer = styled.div`
+  
+  display: flex;
+  justify-content: space-bewteen;
+  flex-direction: column;
   & > *:not(:first-child) {
     margin-top: 1rem;
   }
-
-  ${media('<=tablet')} {
-    flex: 0 40%;
-    margin-right: 1.5rem;
-  }
-
-  ${media('<=phone')} {
-    flex: 0 100%;
-    margin-right: 0rem;
-  }
 `;
+
 
 const ListItemWrapper = styled.p`
   font-size: 1.6rem;
@@ -161,11 +156,11 @@ const ShareBar = styled.div`
 
 const Copyright = styled.p`
   font-size: 1.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.1rem;
 `;
 
 const BottomBar = styled.div`
-  margin-top: 6rem;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

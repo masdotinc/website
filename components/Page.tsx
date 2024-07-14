@@ -43,7 +43,7 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(var(--secondary));
+  background: rgb(var(--primary));
   min-height: 40rem;
 `;
 

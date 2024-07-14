@@ -14,26 +14,25 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
-        <Heading>Make your life easier with our SaaS</Heading>
+        {/* <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle> */}
+        <Heading>automating dynamic corporate workflows.</Heading>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
-          repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
+          Tailored, Efficient, Cost-Effective AI-Driven Services for Your Unique Needs.
         </Description>
         <CustomButtonGroup>
           <Button onClick={() => setIsModalOpened(true)}>
-            Subscribe to the newsletter <span>&rarr;</span>
+            Schedule a Demo <span>&rarr;</span>
           </Button>
           <NextLink href="#whitepaper" passHref>
             <Button transparent>
-              Features <span>&rarr;</span>
+              Grab a Coffee W/ Peter <span>&rarr;</span>
             </Button>
           </NextLink>
         </CustomButtonGroup>
       </Contents>
-      <ImageContainer>
+      {/* <ImageContainer>
         <HeroIllustration />
-      </ImageContainer>
+      </ImageContainer> */}
     </HeroWrapper>
   );
 }
@@ -51,7 +50,7 @@ const HeroWrapper = styled(Container)`
 
 const Contents = styled.div`
   flex: 1;
-  max-width: 60rem;
+  max-width: 80rem;
 
   ${media('<=desktop')} {
     max-width: 100%;
@@ -82,7 +81,7 @@ const ImageContainer = styled.div`
 `;
 
 const Description = styled.p`
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   opacity: 0.8;
   line-height: 1.6;
 
