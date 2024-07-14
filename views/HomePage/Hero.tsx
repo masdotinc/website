@@ -20,10 +20,10 @@ export default function Hero() {
           Tailored, Efficient, Cost-Effective AI-Driven Services for Your Unique Needs.
         </Description>
         <CustomButtonGroup>
-          <Button onClick={() => setIsModalOpened(true)}>
-            Schedule a Demo <span>&rarr;</span>
-          </Button>
-          <NextLink href="#whitepaper" passHref>
+        <Button onClick={() => window.location.href = 'https://airtable.com/appCcFUl2VHxcVltF/pagg2o6DCvzfswjqv/form'}>
+    Schedule a Demo <span>&rarr;</span>
+  </Button>
+          <NextLink href="https://cal.com/mwaisolution/30min" passHref>
             <Button transparent>
               Grab a Coffee W/ Peter <span>&rarr;</span>
             </Button>

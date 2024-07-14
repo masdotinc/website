@@ -8,31 +8,38 @@ import SectionTitle from 'components/SectionTitle';
 import ThreeLayersCircle from 'components/ThreeLayersCircle';
 import { media } from 'utils/media';
 
+
+
+interface FeaturesGalleryProps {
+  id?: string;  
+}
+
+
 const TABS = [
   {
-    title: 'Find relevant media contacts - multiline title',
+    title: 'Sales and Customer Support Chatbot',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-3.png',
+      '<p>Differentiated between new and returning customers, offered tailored interactions such as preference collection and support for order-related queries. Contributed to a 15% increase in orders and conversion rates, a 10% rise in average order value, a 15% boost in returning customer rates, a 150% improvement in efficiency, and a 20% increase in annual revenue.</p>',
+    imageUrl: '/demo-illustration-c.png',
     baseColor: '249,82,120',
     secondColor: '221,9,57',
   },
   {
-    title: 'Another amazing feature',
+    title: 'Affiliation Outreach Automation',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-4.png',
+      '<p>Streamline influencer and affiliate marketing processes to enhance efficiency and outreach scale. Key features include web scraping for potential collaborator contacts, personalized email crafting, and an email chatbot for handling inquiries. This system is projected to significantly boost orders, conversion rates, average order values, customer retention, outreach efficiency, and annual revenue.</p>',
+    imageUrl: '/demo-illustration-m.png',
     baseColor: '57,148,224',
     secondColor: '99,172,232',
   },
-  {
-    title: 'And yet... another truly fascinating feature',
-    description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-5.png',
-    baseColor: '88,193,132',
-    secondColor: '124,207,158',
-  },
+  // {
+  //   title: 'And yet... another truly fascinating feature',
+  //   description:
+  //     '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+  //   imageUrl: '/demo-illustration-5.png',
+  //   baseColor: '88,193,132',
+  //   secondColor: '124,207,158',
+  // },
 ];
 
 export default function FeaturesGallery() {
@@ -77,7 +84,7 @@ export default function FeaturesGallery() {
     <FeaturesGalleryWrapper>
       <Content>
         <OverTitle>Products</OverTitle>
-        <SectionTitle>What are you signing in for?</SectionTitle>
+        <SectionTitle>What are you signing up for?</SectionTitle>
       </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>

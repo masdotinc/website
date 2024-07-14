@@ -21,10 +21,7 @@ import { NavItems } from 'types';
 
 const navItems: NavItems = [
 
-  { title: 'Products', href: '/sign-up', outlined: false},
-
-  { title: 'Privacy Policy', href: '/privacy-policy', outlined: false},
-  { title: 'Contact Us', href: '/sign-up', outlined: true },
+  { title: 'Contact Us', href: '/sign-up', outlined: true},
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });

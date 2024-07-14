@@ -11,21 +11,19 @@ type FooterItems = SingleFooterList[];
 
 const footerItems: FooterItems = [
   {
-    title: 'Midwest AI Solution, Inc.',
+    title: 'MAS, Inc.',
     subtitle: 'Chicago, IL',
     items: [
     ],
   },
   
-  // {
-  //   title: 'Knowledge',
-  //   items: [
-  //     { title: 'Blog', href: '/blog' },
-  //     { title: 'Contact', href: '/contact' },
-  //     { title: 'FAQ', href: '/faq' },
-  //     { title: 'Help Center', href: '/help-center' },
-  //   ],
-  // },
+  {
+    title: '',
+    items: [
+      { title: 'Contact Us', href: 'mailto:support@mwaisolution.com' },
+      { title: 'Privacy Policy', href: '/privacy-policy' },
+    ],
+  },
   // {
   //   title: 'Something',
   //   items: [
@@ -50,7 +48,6 @@ export default function Footer() {
           
           <Copyright>Copyright &copy; 2024 Midwest AI Solution, Inc.</Copyright>
 
-          <Copyright>support@mwaisolution.com</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>
@@ -129,7 +126,7 @@ const HeaderContainer = styled.div`
 `;
 
 const ItemsContainer = styled.div`
-  
+  margin-top: 2rem;
   display: flex;
   justify-content: space-bewteen;
   flex-direction: column;

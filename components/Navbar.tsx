@@ -96,7 +96,12 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
   }
 
   if (outlined) {
-    return <CustomButton onClick={showNewsletterModal}>{title}</CustomButton>;
+    return (
+      // Redirect to mailto on button click
+      <CustomButton onClick={() => window.location.href = 'mailto:support@mwaisolution.com'}>
+        {title}
+      </CustomButton>
+    );
   }
 
   return (
@@ -108,9 +113,14 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
   );
 }
 
+
 const CustomButton = styled(Button)`
   padding: 0.75rem 1.5rem;
-  line-height: 1.8;
+  border-width: 2px; 
+  border-style: solid; // Ensure border style is solid
+  border-color: black; // Set border color
+  background-color: transparent; 
+  color: black; 
 `;
 
 const NavItemList = styled.div`
@@ -132,13 +142,13 @@ const LogoWrapper = styled.a`
   display: flex;
   margin-right: auto;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: rgb(var(--logoColor));
 `;
 
 const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
   border-radius: 0.5rem;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   line-height: 2;
 
@@ -153,7 +163,6 @@ const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
     letter-spacing: 0.025em;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
-    font-weight: 700;
   }
 
   &:not(:last-child) {
